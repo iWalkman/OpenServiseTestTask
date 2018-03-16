@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TestOpen.Models;
+using System.Collections.Generic;
 
 namespace TestOpen.Controllers
 {
@@ -31,17 +32,23 @@ namespace TestOpen.Controllers
             });
 
             return Ok(response);
+
         }
+        //[HttpGet]
+        //public IEnumerable<User> GetAll()
+        //{
+        //    return _context.Users.ToList();
+        //}
 
         [HttpGet("{id}", Name = "GetTodo")]
         public IActionResult GetById(long id)
         {
-            var item = _context.Users.FirstOrDefault(t => t.Id == id);
+            var item = _context.Users.Include(u => u.Posts).FirstOrDefault(t => t.Id == id);
             if (item == null)
             {
                 return NotFound();
             }
-            return new ObjectResult(item);
+            return Ok(item);
         }
 
         [HttpPost]
@@ -57,6 +64,44 @@ namespace TestOpen.Controllers
             _context.SaveChanges();
 
             return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(long id, [FromBody] User item)
+        {
+            if (item == null || item.Id != id)
+            {
+                return BadRequest();
+            }
+
+            var todo = _context.Users.FirstOrDefault(t => t.Id == id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            todo.Id = item.Id;
+            todo.FirstName = item.FirstName;
+            todo.LastName = item.LastName;
+            todo.Posts = item.Posts;
+
+            _context.Users.Update(todo);
+            _context.SaveChanges();
+            return new NoContentResult();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
+        {
+            var todo = _context.Users.FirstOrDefault(t => t.Id == id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            _context.Users.Remove(todo);
+            _context.SaveChanges();
+            return new NoContentResult();
         }
     }
 }
