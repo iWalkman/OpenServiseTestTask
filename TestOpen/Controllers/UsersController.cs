@@ -34,11 +34,7 @@ namespace TestOpen.Controllers
             return Ok(response);
 
         }
-        //[HttpGet]
-        //public IEnumerable<User> GetAll()
-        //{
-        //    return _context.Users.ToList();
-        //}
+
 
         [HttpGet("{id}", Name = "GetTodo")]
         public IActionResult GetById(long id)
@@ -48,7 +44,10 @@ namespace TestOpen.Controllers
             {
                 return NotFound();
             }
-            return Ok(item);
+
+
+
+            return Json(item);
         }
 
         [HttpPost]

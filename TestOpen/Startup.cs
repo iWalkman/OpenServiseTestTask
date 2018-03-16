@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using TestOpen.Models;
+using Newtonsoft.Json;
 
 namespace TestOpen
 {
@@ -26,7 +27,8 @@ namespace TestOpen
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("TestApi"));
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options =>
+                                             options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
