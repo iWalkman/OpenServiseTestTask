@@ -1,0 +1,11 @@
+/Users/Konstantin/Projects/TestOpen/TestOpen/obj/Debug/netcoreapp2.0/TestOpen.csprojResolveAssemblyReference.cache
+/Users/Konstantin/Projects/TestOpen/TestOpen/obj/Debug/netcoreapp2.0/TestOpen.csproj.CoreCompileInputs.cache
+/Users/Konstantin/Projects/TestOpen/TestOpen/obj/Debug/netcoreapp2.0/TestOpen.AssemblyInfoInputs.cache
+/Users/Konstantin/Projects/TestOpen/TestOpen/obj/Debug/netcoreapp2.0/TestOpen.AssemblyInfo.cs
+/Users/Konstantin/Projects/TestOpen/TestOpen/bin/Debug/netcoreapp2.0/TestOpen.deps.json
+/Users/Konstantin/Projects/TestOpen/TestOpen/bin/Debug/netcoreapp2.0/TestOpen.runtimeconfig.json
+/Users/Konstantin/Projects/TestOpen/TestOpen/bin/Debug/netcoreapp2.0/TestOpen.runtimeconfig.dev.json
+/Users/Konstantin/Projects/TestOpen/TestOpen/bin/Debug/netcoreapp2.0/TestOpen.dll
+/Users/Konstantin/Projects/TestOpen/TestOpen/bin/Debug/netcoreapp2.0/TestOpen.pdb
+/Users/Konstantin/Projects/TestOpen/TestOpen/obj/Debug/netcoreapp2.0/TestOpen.dll
+/Users/Konstantin/Projects/TestOpen/TestOpen/obj/Debug/netcoreapp2.0/TestOpen.pdb
