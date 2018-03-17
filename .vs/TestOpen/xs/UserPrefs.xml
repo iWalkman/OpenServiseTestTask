@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{4A37E71D-96C2-4B8E-8FB6-B50994B54CD7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TestOpen/Models/Post.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="README.md">
     <Files>
-      <File FileName="TestOpen/Models/User.cs" Line="8" Column="19" />
-      <File FileName="TestOpen/Models/Post.cs" Line="8" Column="19" />
+      <File FileName="TestOpen/Models/User.cs" Line="14" Column="26" />
+      <File FileName="TestOpen/Models/Post.cs" Line="9" Column="9" />
       <File FileName="TestOpen/Models/ApiContext.cs" Line="14" Column="33" />
-      <File FileName="TestOpen/Startup.cs" Line="64" Column="26" />
-      <File FileName="TestOpen/Controllers/UsersController.cs" Line="39" Column="38" />
+      <File FileName="TestOpen/Controllers/UsersController.cs" Line="76" Column="13" />
+      <File FileName="TestOpen/Startup.cs" Line="67" Column="49" />
+      <File FileName="README.md" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
