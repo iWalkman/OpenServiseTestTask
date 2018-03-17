@@ -66,14 +66,15 @@ namespace TestOpen.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(long id, [FromBody] User item)
+        public async Task<IActionResult> Update(long id, [FromBody] User item)
+        //public IActionResult Update(long id, [FromBody] User item)
         {
             if (item == null || item.Id != id)
             {
                 return BadRequest();
             }
 
-            var todo = _context.Users.FirstOrDefault(t => t.Id == id);
+            var todo = _context.Users.AsNoTracking().Include(u => u.Posts).FirstOrDefault(t => t.Id == id);
             if (todo == null)
             {
                 return NotFound();
@@ -85,7 +86,7 @@ namespace TestOpen.Controllers
             todo.Posts = item.Posts;
 
             _context.Users.Update(todo);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return new NoContentResult();
         }
 

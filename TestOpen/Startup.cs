@@ -64,7 +64,7 @@ namespace TestOpen
             {
                 Id = 1,
                 UserId = testUser1.Id,
-                Content = "What a piece of junk!"
+                Content = "What a piece of power!"
             };
 
             context.Posts.Add(testPost1);
